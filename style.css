@@ -30,13 +30,14 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width:65%
 }
 
 .info_top{
     padding: 10px 20px 0px;;
 }
 
-i{
+.fa-map-marker-alt{
     margin:0px 5px 0px 0px;
 }
 
@@ -71,7 +72,7 @@ span{
 }
 
 .media_box{
-    width: 70%;
+    width: 35%;
 }
 
 
@@ -80,13 +81,29 @@ span{
 .slideshow{
     width: 100%;
     height:100%;
-    overflow: hidden;
 }
 .slideshow img{
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
+
+.cartel{
+    background-color: violet;
+    color:white;
+    position: relative;
+    top:-95%;
+    margin:0px;
+    width:50%;
+    text-indent: 1em;
+}
+
+.fa-heart{
+    font-size:30px;
+    position: relative;
+    top:-270px;
+    left:270px;
+}
+
 
 .photo{
     display: none;
@@ -101,13 +118,14 @@ span{
 .right{
     position: relative;
     bottom: 135px;
-    right: -135px;
+    right: -195px;
 }
 
 .info_bottom{
     background-color: #E0E0D8;
     display: flex;
     justify-content: space-between;
+    height:15%;
 }
 
 .items{
@@ -130,6 +148,9 @@ button{
     font-size: 15px;
 }
 
+
+
+
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
     .box_container{
@@ -138,15 +159,25 @@ button{
     }
 
     .right{
-        left: 70px;
+        left: 149px;
+    }
+
+    .cartel{
+        width:60%;
+
+    }
+    .fa-heart{
+    top:-300px;
+    left:210px;
     }
 }
 
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-device-width : 760px) {  
 
     .box_container{
-        width: 90%;
-        height: 100%;
+        width: 100%;
+        height: auto;
         max-width: 414px;
         min-width: 320px;
         flex-direction: column;
@@ -155,15 +186,32 @@ button{
 
     .media_box{
         width: 100%;
+        height:300px;
     }
+
+    .cartel{
+        font-size: 20px;
+        top:-270px;
+    }
+
+    .fa-heart{
+        top: -315px;
+        left:360px;
+        font-size: 40px;
+    }
+
 
     .slideshow{
         width: 100%;
-        height: 280px;
+        height: 100%;
+    }
+
+    .photo img{
+        height:414px;
     }
 
     .right{
-        right: -190px;
+        right: -300px;
         bottom:160px;
     }
     .left{
@@ -171,11 +219,36 @@ button{
     }
 
     h1, .items{
+        color:white;
+        position: relative;        
+    }
+
+    h1{
+        top:-290px;
+    }
+    
+
+    .items{
+        justify-content: space-around;
+        margin:0px;
+        height:15px;
+        top:-290px;
+        left: 15px;
+        width: 100%;
+        
+    }
+
+    li{
+        /* margin:0px 10px; */
+        font-size: 10px;
+    }
+    span{
         display: none;
     }
 
     .info_box{
-        height: 100%;
+        height: auto;
+        width:100%;
     }
 
     .info_bottom{
@@ -186,4 +259,60 @@ button{
         background-color: white;
         margin:20px;
     }
+
+}
+
+@media only screen and (max-width: 424px){
+
+    .fa-heart{
+        top:-310px;
+        left:320px;
+    }
+
+    h1{
+        top:-300px;
+    }
+
+    .items{
+        top:-295px;
+    }
+
+    .right{
+        right:-265px
+    }
+    
+}
+
+@media only screen and (max-width: 380px){
+    h1{
+        top:-330px;
+    }
+
+    .items{
+        top:-330px;
+    }
+}
+
+@media only screen and (max-width: 365px){
+    h1{
+        top:-350px;
+    }
+
+    .items{
+        top:-350px;
+        left:25px;
+    }
+
+    .fa-heart{
+        top:-310px;
+        left:270px;
+    }
+
+    .right{
+        right:-210px
+    }
+}
+
+.red_heart{
+    color:red;
 }
