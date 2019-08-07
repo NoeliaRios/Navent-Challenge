@@ -7,23 +7,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Navent Challenge</title>
 </head>
 
 <body>
 
     <div class="container">
+
+        <div id="modal_wrapper" class="displayNone">
+
+            <p id="modal_p">Para ser contactado por favor ingrese su dirección de correo electrónico.</p>
+            <form action="" method="post" class="formulario" name="formulario" >
+                <label class="form_label">Email</label>
+                <input type="email" id="form_email" name="email" placeholder="myemail@gmail.com">
+            
+                <br/>
+                <div class="submit_button">
+                <input type="submit" id="form_submit" name="submit" value="ENVIAR" /></div>
+
+            </form>
+
+        </div>
+
+
+
         <div class="box_container">
             <div class="media_box">
 
-                
-
                 <div class="slideshow">
-                    <img src="./assets/photo1.jpg"  class="photo">
-                    <img src="./assets/photo2.jpg"  class="photo">
-                    <img src="./assets/photo3.jpg"  class="photo">
-                    <img src="./assets/photo4.jpg"  class="photo">
+                    <img src="./assets/photo1.jpg" class="photo">
+                    <img src="./assets/photo2.jpg" class="photo">
+                    <img src="./assets/photo3.jpg" class="photo">
+                    <img src="./assets/photo4.jpg" class="photo">
 
                     <button class="left" onclick="plusDivs(-1)">&#10094;</button>
                     <button class="right" onclick="plusDivs(1)">&#10095;</button>
@@ -37,12 +54,18 @@
             <div class="info_box">
                 <div class="info_top">
                     <h2>Donec ultricies, justo id mollis.</h2>
-                    
-                    <h5><i class="fas fa-map-marker-alt"></i>Mataderos centro, al frente, 140 m2. suite, lavadero, Fonrouge y Alberdi.</h5>
-                    <p>Se ingresa desde un paso de 1,10 x 3,50 a un living . Toilette 1,70 x 0,95. Living muy luminoso
-                        de 5 x 4,30 con salamandra a gas, alfombrado. Escritorio con placard de 1,60 x 1,60. Con placard de piso a techo.</p>
 
-                    <h1>U$S 1.400.00 <span>$/m² 3.680</span></h1>
+                    <h5><i class="fas fa-map-marker-alt"></i>Mataderos centro, al frente, 140 m2. suite, lavadero,
+                        Fonrouge y Alberdi.</h5>
+                    <p>Se ingresa desde un paso de 1,10 x 3,50 a un living . Toilette 1,70 x 0,95. Living muy luminoso
+                        de 5 x 4,30 con salamandra a gas, alfombrado. Escritorio con placard de 1,60 x 1,60. Con placard
+                        de piso a techo.</p>
+
+                    <div class="price_box">
+                        <p class="dolar">U$S</p><input type="number" name="price" id="price_tag"
+                            placeholder="1.400.000" /><span>$/m² 3.680</span>
+
+                    </div>
                 </div>
                 <div class="info_bottom">
                     <ul class="items">
@@ -51,7 +74,7 @@
                         <li>2 Baños</li>
                         <li>2 Cocheras</li>
                     </ul>
-                    <button>CONTACTAR</button>
+                    <button id="contact">CONTACTAR</button>
                 </div>
             </div>
         </div>

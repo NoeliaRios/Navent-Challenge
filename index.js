@@ -30,23 +30,30 @@ likedHeart.onclick = function(e){
 
 
 
+const changedPrice = document.querySelector('#price_tag');
+console.log(changedPrice);
+
+changedPrice.addEventListener('keypress', function(e){
+  if (e.keyCode === 13){
+    const newPrice = changedPrice.value;
+    const areaPrice = document.querySelector('span')
+    // const changedArea = areaPrice.textContent
+    console.log('areaPrice'+ areaPrice);
+    console.log('newprice'+newPrice);
+
+    areaPrice.innerHTML = '$/m²' + Math.round((newPrice*3680)/1400000);
+
+  }
+})
 
 
-// var click = 0;
-// var likesPares = 0;
+const contactButton = document.querySelector('#contact');
+const modalWrapper = document.querySelector('#modal_wrapper');
+const boxContainer = document.querySelector('.box_container');
 
-// function likedHeart() {
+contactButton.onclick = function(e){
+    e.preventDefault();
+    boxContainer.classList.add('displayNone');
+    modalWrapper.classList.remove('displayBlock');
+}
 
-//   click++
-
-//   if (click % 2 == 0) {
-//     likesPares++
-//     console.log(likesPares)
-//     // var numeroDeLikes = document.querySelector('.fa-heart'); 
-
-//   }
-
-//   var iconos = document.querySelector('.fa-heart')
-//   iconos.classList.toggle('.red_heart')
-
-// }

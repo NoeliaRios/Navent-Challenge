@@ -5,7 +5,6 @@ body{
     letter-spacing: 0.5px;
     line-height: 18px;
     line-height: 1.4;
-    background-color: whitesmoke;
 
 }
 
@@ -22,8 +21,52 @@ body{
     max-width: 875px;
     height: 260px;
     display: flex;
-    box-shadow: 10px 10px 5px 0px rgba(179,169,169,0.75);
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
     background-color: white;
+}
+
+#modal_wrapper{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    background-color: white;
+}
+
+#modal_p, #form_email, #form_submit, #form_email::placeholder{
+    color: #08a0e9;
+}
+
+#form_email{
+    border: 0;
+    border-bottom: 1px solid black;
+    margin:5px;
+    width: 100%;
+    padding:5px;
+    outline: none;
+}
+
+#form_email::placeholder{
+    opacity:0.5;
+}
+
+#form_email:focus{
+    border: 2px solid #08a0e9;
+}
+
+.form_label{
+    margin-left:5px   
+}
+
+#form_submit{
+    border:0;
+    
+    margin:20px;
+    background: transparent;
+}
+
+.submit_button{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .info_box{
@@ -61,10 +104,40 @@ h2{
     font-weight: 400;
 }
 
-h1{
-    /* font-size: 30px; */
-    margin:0px;
+.price_box{
+    display: flex;
+    
+}
+
+.dolar{
+    font-size: 20px;
     font-weight: 700;
+    margin:0px;
+
+}
+
+
+#price_tag{
+    font-size: 20px;
+    margin:0px;
+    padding: 0px;
+    font-weight: 700;
+    border:0;
+    background: transparent;
+    width:100px;
+}
+
+#price_tag::placeholder{
+    opacity:1;
+    font-weight: 700;
+    color:black;
+    font-size: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 span{
     font-size: 15px;
@@ -218,21 +291,27 @@ button{
         bottom:160px;
     }
 
-    h1, .items{
+    #price_tag, .items, .dolar{
         color:white;
         position: relative;        
     }
 
-    h1{
+    #price_tag, .dolar{
         top:-290px;
     }
+
+
+    ::placeholder{
+        color:white;
+    }
+    
     
 
     .items{
         justify-content: space-around;
         margin:0px;
         height:15px;
-        top:-290px;
+        top:-280px;
         left: 15px;
         width: 100%;
         
@@ -269,8 +348,8 @@ button{
         left:320px;
     }
 
-    h1{
-        top:-300px;
+    #price_tag, .dolar{
+        top:-330px;
     }
 
     .items{
@@ -284,22 +363,22 @@ button{
 }
 
 @media only screen and (max-width: 380px){
-    h1{
-        top:-330px;
+    #price_tag, .dolar{
+        top:-310px;
     }
 
     .items{
-        top:-330px;
+        top:-310px;
     }
 }
 
 @media only screen and (max-width: 365px){
-    h1{
+    #price_tag, .dolar{
         top:-350px;
     }
 
     .items{
-        top:-350px;
+        top:-340px;
         left:25px;
     }
 
@@ -311,8 +390,17 @@ button{
     .right{
         right:-210px
     }
+
 }
 
 .red_heart{
     color:red;
+}
+
+.displayNone{
+    display:none !important ;
+}
+
+.displayBlock{
+    display: block;
 }
