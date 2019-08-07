@@ -23,7 +23,7 @@ const likedHeart = document.querySelector('.fa-heart');
 likedHeart.onclick = function(e){
   e.preventDefault();
   const heartIcon = document.querySelector('.fa-heart');
-  heartIcon.classList.toggle('.red_heart');
+  heartIcon.classList.toggle('red_heart');
   console.log('liked heart');
 }
 
