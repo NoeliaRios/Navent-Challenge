@@ -78,7 +78,7 @@ contactButton.onclick = function (e) {
 
 
 
-const submittedForm = document.querySelector('#form_submit');
+const submittedForm = document.querySelector('#formulario');
 
 submittedForm.onsubmit = function (e) {
   e.preventDefault();
