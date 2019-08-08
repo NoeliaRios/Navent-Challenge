@@ -25,7 +25,21 @@ likedHeart.onclick = function (e) {
   const heartIcon = document.querySelector('.fa-heart');
   heartIcon.classList.toggle('red_heart');
   console.log('liked heart');
+  var likedState = {}
+
+
+  let estado = 'MeGusta';
+  localStorage.setItem('Liked', estado);  
+
 }
+
+if (localStorage.getItem('Me gusta')){
+  const heartIcon = document.querySelector('.fa-heart');
+  heartIcon.classList.toggle('red_heart');
+}
+
+
+
 
 
 
@@ -64,24 +78,21 @@ contactButton.onclick = function (e) {
 
 
 
-
-
-
-const submittedForm = document.querySelector('formulario');
+const submittedForm = document.querySelector('#form_submit');
 
 submittedForm.onsubmit = function (e) {
   e.preventDefault();
 
-  const emailInput = document.getElementById('form_email').value;
-  // const email = emailInput.value;
+  const emailValue = document.querySelector('#form_email').value;
+  const emailInput = document.querySelector('#form_email');
 
-  if (email.length <= 0) {
-    email.classList.add('error');
+  if (emailValue.length <= 0) {
+    emailInput.classList.add('error');
   }
 
-
+console.log('emailinput' + emailInput);
+console.log('email' + emailValue);
 }
 
-console.log('emailinput' + emailInput);
-// console.log('email' + email);
+
 
