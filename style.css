@@ -30,19 +30,23 @@ body{
     flex-direction: column;
     box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
     background-color: white;
+    padding: 20px;
 }
 
 #modal_p, #form_email, #form_submit, #form_email::placeholder{
     color: #08a0e9;
+    margin-left: 5px;
+    
 }
 
 #form_email{
     border: 0;
     border-bottom: 1px solid black;
-    margin:5px;
+    /* margin:5px; */
     width: 100%;
     padding:5px;
     outline: none;
+    width:95%;
 }
 
 #form_email::placeholder{
@@ -403,4 +407,9 @@ button{
 
 .displayBlock{
     display: block;
+}
+
+.error{
+    border: 2px solid red;
+    background-color: pink;
 }

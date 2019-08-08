@@ -20,7 +20,7 @@ function showDivs(n) {
 
 
 const likedHeart = document.querySelector('.fa-heart');
-likedHeart.onclick = function(e){
+likedHeart.onclick = function (e) {
   e.preventDefault();
   const heartIcon = document.querySelector('.fa-heart');
   heartIcon.classList.toggle('red_heart');
@@ -33,15 +33,15 @@ likedHeart.onclick = function(e){
 const changedPrice = document.querySelector('#price_tag');
 console.log(changedPrice);
 
-changedPrice.addEventListener('keypress', function(e){
-  if (e.keyCode === 13){
+changedPrice.addEventListener('keypress', function (e) {
+  if (e.keyCode === 13) {
     const newPrice = changedPrice.value;
     const areaPrice = document.querySelector('span')
     // const changedArea = areaPrice.textContent
-    console.log('areaPrice'+ areaPrice);
-    console.log('newprice'+newPrice);
+    console.log('areaPrice' + areaPrice);
+    console.log('newprice' + newPrice);
 
-    areaPrice.innerHTML = '$/m²' + Math.round((newPrice*3680)/1400000);
+    areaPrice.innerHTML = '$/m²' + Math.round((newPrice * 3680) / 1400000);
 
   }
 })
@@ -51,9 +51,29 @@ const contactButton = document.querySelector('#contact');
 const modalWrapper = document.querySelector('#modal_wrapper');
 const boxContainer = document.querySelector('.box_container');
 
-contactButton.onclick = function(e){
-    e.preventDefault();
-    boxContainer.classList.add('displayNone');
-    modalWrapper.classList.remove('displayBlock');
+contactButton.onclick = function (e) {
+  e.preventDefault();
+  boxContainer.classList.add('displayNone');
+  modalWrapper.classList.remove('displayNone');
+  modalWrapper.classList.add('displayBlock');
 }
+
+
+const submittedForm = document.querySelector('.formulario');
+
+submittedForm.onsubmit = function (e) {
+  e.preventDefault();
+
+  const emailInput = document.getElementById('#form_email');
+  const email = emailInput.value;
+
+  if (email.length <= 0) {
+    email.classList.add('error');
+  }
+
+
+}
+
+console.log('emailinput' + emailInput);
+console.log('email' + email);
 
