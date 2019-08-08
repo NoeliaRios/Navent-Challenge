@@ -59,13 +59,21 @@ contactButton.onclick = function (e) {
 }
 
 
-const submittedForm = document.querySelector('.formulario');
+
+
+
+
+
+
+
+
+const submittedForm = document.querySelector('formulario');
 
 submittedForm.onsubmit = function (e) {
   e.preventDefault();
 
-  const emailInput = document.getElementById('#form_email');
-  const email = emailInput.value;
+  const emailInput = document.getElementById('form_email').value;
+  // const email = emailInput.value;
 
   if (email.length <= 0) {
     email.classList.add('error');
@@ -75,5 +83,5 @@ submittedForm.onsubmit = function (e) {
 }
 
 console.log('emailinput' + emailInput);
-console.log('email' + email);
+// console.log('email' + email);
 
