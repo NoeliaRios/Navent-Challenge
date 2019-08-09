@@ -17,8 +17,6 @@ function showDivs(n) {
 }
 
 
-
-
 const likedHeart = document.querySelector('.fa-heart');
 likedHeart.onclick = function (e) {
   e.preventDefault();
@@ -40,34 +38,37 @@ if (localStorage.getItem('Liked')) {
   heartIcon.classList.toggle('red_heart');
 }
 
+
+
 const changedPrice = document.querySelector('#price_tag');
-// localStorage.setItem('PrecioNuevo', 1400000);
 changedPrice.placeholder = localStorage.PrecioNuevo;
-
-// areaPrice.innerHTML = localStorage.PrecioMetro;
-
+const areaPrice = document.querySelector('span')
+areaPrice.innerHTML = '$/m²' +' '+ localStorage.PrecioMetro;
 
 changedPrice.addEventListener('keypress', function (e) {
   if (e.keyCode === 13) {
     const newPrice = changedPrice.value;
     const areaPrice = document.querySelector('span')
-    
+
     const resulted = Math.round((newPrice * 3680) / 1400000);
-    areaPrice.innerHTML = '$/m²' + resulted;    
+    areaPrice.innerHTML = '$/m²' + resulted;
 
     localStorage.setItem('PrecioNuevo', newPrice);
     localStorage.setItem('PrecioMetro', resulted);
 
     if (localStorage.getItem('PrecioNuevo')) {
       changedPrice.placeholder = newPrice;
-
+    } else{
+      localStorage.setItem('PrecioNuevo', 1400000);
     }
   }
 });
-// if (localStorage.getItem('PrecioNuevo') || localStorage.getItem('PrecioMetro')) {
-//   changedPrice.placeholder = newPrice;
-//   areaPrice.innerHTML = '$/m²' + resulted;
-// }
+if (localStorage.getItem('PrecioNuevo')) {
+} else{
+  localStorage.setItem('PrecioNuevo', 1400000);
+  localStorage.setItem('PrecioMetro', 3680);
+}
+
 
 
 const contactButton = document.querySelector('#contact');
@@ -80,7 +81,6 @@ contactButton.onclick = function (e) {
   modalWrapper.classList.remove('displayNone');
   modalWrapper.classList.add('displayBlock');
 }
-
 
 
 
@@ -99,24 +99,19 @@ submittedForm.onsubmit = function (e) {
     errorTxt.classList.remove('displayNone');
   } else {
     modalWrapper.classList.add('displayNone');
-    
-  
 
-  modalThanks.classList.remove('displayNone');
-  // modalThanks.classList.add('displayBlock');
-  modalWrapper.classList.add('displayNone');
-  boxContainer.classList.add('displayNone');
+    modalThanks.classList.remove('displayNone');
+    modalWrapper.classList.add('displayNone');
+    boxContainer.classList.add('displayNone');
   }
 }
 
-const backButton = document.querySelector('#back');
 
-backButton.onclick = function (e){
+const backButton = document.querySelector('#back');
+backButton.onclick = function (e) {
   e.preventDefault();
   modalThanks.classList.add('displayNone');
   modalWrapper.classList.add('displayNone');
   boxContainer.classList.remove('displayNone');
-
-
 }
 

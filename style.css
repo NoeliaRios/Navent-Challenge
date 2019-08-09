@@ -129,7 +129,9 @@ h2{
     border:0;
     background: transparent;
     width:100px;
+    margin-left:5px;
 }
+
 
 #price_tag::placeholder{
     opacity:1;
@@ -305,7 +307,7 @@ button{
     }
 
 
-    ::placeholder{
+    ::placeholder, #price_tag::placeholder{
         color:white;
     }
     
@@ -345,7 +347,8 @@ button{
 
 }
 
-@media only screen and (max-width: 424px){
+
+@media only screen and (max-width: 425px){
 
     .fa-heart{
         top:-310px;
@@ -353,15 +356,23 @@ button{
     }
 
     #price_tag, .dolar{
-        top:-330px;
+        top:-300px;
+        color:white;
     }
 
     .items{
-        top:-295px;
+        top:-290px;
     }
 
     .right{
         right:-265px
+    }
+
+    #price_tag::placeholder{
+        opacity:1;
+        font-weight: 700;
+        color:white;
+        font-size: 20px;
     }
     
 }
@@ -401,7 +412,7 @@ button{
     color:red;
     font-weight: 700;
     margin-left: 5px;
-    
+
 }
 
 .red_heart{
