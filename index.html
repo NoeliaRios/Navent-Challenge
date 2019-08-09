@@ -21,14 +21,17 @@
             <p id="modal_p">Para ser contactado por favor ingrese su dirección de correo electrónico.</p>
             <form action="" method="post" id="formulario" name="formulario" >
                 <label class="form_label">Email</label>
-                <input type="email" id="form_email" name="email" placeholder="myemail@gmail.com">
-            
-                <br/>
+                <input type="email" id="form_email" name="email" placeholder="myemail@gmail.com">            
+                <br/><p id="error_txt" class="displayNone">Escriba un email válido.</p>
                 <div class="submit_button">
+                    
                 <input type="submit" id="form_submit" name="submit" value="ENVIAR" /></div>
-
             </form>
+        </div>
 
+        <div id="modal_thanks" class="displayNone">
+            <p id="modal_p">Muchas gracias por contactarse con nosotros</p>
+            <button id="back" onclick="backHome()">VOLVER</button>
         </div>
 
 
@@ -64,7 +67,6 @@
                     <div class="price_box">
                         <p class="dolar">U$S</p><input type="number" name="price" id="price_tag"
                             placeholder="1.400.000" /><span>$/m² 3.680</span>
-
                     </div>
                 </div>
                 <div class="info_bottom">

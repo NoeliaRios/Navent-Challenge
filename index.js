@@ -41,7 +41,10 @@ if (localStorage.getItem('Liked')) {
 }
 
 const changedPrice = document.querySelector('#price_tag');
-console.log(changedPrice);
+// localStorage.setItem('PrecioNuevo', 1400000);
+changedPrice.placeholder = localStorage.PrecioNuevo;
+
+// areaPrice.innerHTML = localStorage.PrecioMetro;
 
 
 changedPrice.addEventListener('keypress', function (e) {
@@ -56,13 +59,15 @@ changedPrice.addEventListener('keypress', function (e) {
     localStorage.setItem('PrecioMetro', resulted);
 
     if (localStorage.getItem('PrecioNuevo')) {
-      changedPrice.innerText = newPrice;
+      changedPrice.placeholder = newPrice;
+
     }
   }
 });
-if (localStorage.getItem('PrecioNuevo')) {
-  changedPrice.innerText = newPrice;
-}
+// if (localStorage.getItem('PrecioNuevo') || localStorage.getItem('PrecioMetro')) {
+//   changedPrice.placeholder = newPrice;
+//   areaPrice.innerHTML = '$/m²' + resulted;
+// }
 
 
 const contactButton = document.querySelector('#contact');
@@ -79,27 +84,39 @@ contactButton.onclick = function (e) {
 
 
 
-
-
-
 const submittedForm = document.querySelector('#formulario');
+const modalThanks = document.querySelector('#modal_thanks');
 
 submittedForm.onsubmit = function (e) {
   e.preventDefault();
 
   const emailValue = document.querySelector('#form_email').value;
   const emailInput = document.querySelector('#form_email');
+  const errorTxt = document.querySelector('#error_txt');
 
   if (emailValue.length <= 0) {
     emailInput.classList.add('error');
+    errorTxt.classList.remove('displayNone');
   } else {
     modalWrapper.classList.add('displayNone');
-    v
-  }
+    
+  
 
-  console.log('emailinput' + emailInput);
-  console.log('email' + emailValue);
+  modalThanks.classList.remove('displayNone');
+  // modalThanks.classList.add('displayBlock');
+  modalWrapper.classList.add('displayNone');
+  boxContainer.classList.add('displayNone');
+  }
 }
 
+const backButton = document.querySelector('#back');
 
+backButton.onclick = function (e){
+  e.preventDefault();
+  modalThanks.classList.add('displayNone');
+  modalWrapper.classList.add('displayNone');
+  boxContainer.classList.remove('displayNone');
+
+
+}
 
