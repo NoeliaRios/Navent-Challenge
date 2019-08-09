@@ -25,40 +25,44 @@ likedHeart.onclick = function (e) {
   const heartIcon = document.querySelector('.fa-heart');
   heartIcon.classList.toggle('red_heart');
   console.log('liked heart');
-  var likedState = {}
+  var likedState = {};
 
-
-  let estado = 'MeGusta';
-  localStorage.setItem('Liked', estado);  
-
+  if (localStorage.getItem('Liked')) {
+    localStorage.removeItem('Liked')
+  } else {
+    let estado = 'MeGusta';
+    localStorage.setItem('Liked', estado);
+  }
 }
 
-if (localStorage.getItem('Me gusta')){
+if (localStorage.getItem('Liked')) {
   const heartIcon = document.querySelector('.fa-heart');
   heartIcon.classList.toggle('red_heart');
 }
 
-
-
-
-
-
-
 const changedPrice = document.querySelector('#price_tag');
 console.log(changedPrice);
+
 
 changedPrice.addEventListener('keypress', function (e) {
   if (e.keyCode === 13) {
     const newPrice = changedPrice.value;
     const areaPrice = document.querySelector('span')
-    // const changedArea = areaPrice.textContent
-    console.log('areaPrice' + areaPrice);
-    console.log('newprice' + newPrice);
+    
+    const resulted = Math.round((newPrice * 3680) / 1400000);
+    areaPrice.innerHTML = '$/m²' + resulted;    
 
-    areaPrice.innerHTML = '$/m²' + Math.round((newPrice * 3680) / 1400000);
+    localStorage.setItem('PrecioNuevo', newPrice);
+    localStorage.setItem('PrecioMetro', resulted);
 
+    if (localStorage.getItem('PrecioNuevo')) {
+      changedPrice.innerText = newPrice;
+    }
   }
-})
+});
+if (localStorage.getItem('PrecioNuevo')) {
+  changedPrice.innerText = newPrice;
+}
 
 
 const contactButton = document.querySelector('#contact');
@@ -88,10 +92,13 @@ submittedForm.onsubmit = function (e) {
 
   if (emailValue.length <= 0) {
     emailInput.classList.add('error');
+  } else {
+    modalWrapper.classList.add('displayNone');
+    v
   }
 
-console.log('emailinput' + emailInput);
-console.log('email' + emailValue);
+  console.log('emailinput' + emailInput);
+  console.log('email' + emailValue);
 }
 
 
