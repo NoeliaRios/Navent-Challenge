@@ -40,10 +40,16 @@ if (localStorage.getItem('Liked')) {
 
 
 
+if (localStorage.getItem('PrecioNuevo')) {
+} else{
+  localStorage.setItem('PrecioNuevo', 1400000);
+  localStorage.setItem('PrecioMetro', 3680);
+}
+
 const changedPrice = document.querySelector('#price_tag');
-changedPrice.placeholder = localStorage.PrecioNuevo;
+changedPrice.placeholder = localStorage.getItem('PrecioNuevo');
 const areaPrice = document.querySelector('span')
-areaPrice.innerHTML = '$/m²' +' '+ localStorage.PrecioMetro;
+areaPrice.innerHTML = '$/m²' +' '+ localStorage.getItem('PrecioMetro');
 
 changedPrice.addEventListener('keypress', function (e) {
   if (e.keyCode === 13) {
@@ -63,11 +69,7 @@ changedPrice.addEventListener('keypress', function (e) {
     }
   }
 });
-if (localStorage.getItem('PrecioNuevo')) {
-} else{
-  localStorage.setItem('PrecioNuevo', 1400000);
-  localStorage.setItem('PrecioMetro', 3680);
-}
+
 
 
 
